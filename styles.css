@@ -1,0 +1,218 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.tasks {
+    text-align: left;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    /* ... outros estilos ... */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    position: relative; /* Adicione posição relativa */
+}
+
+.task-options {
+    position: absolute; /* Posição absoluta para manter os botões à direita */
+    top: 50%; /* Posicione verticalmente no meio */
+    transform: translateY(-50%); /* Ajuste verticalmente ao meio */
+    right: 10px; /* Distância à direita */
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+}
+
+li:hover {
+    background-color: #f9f9f9;
+}
+
+li.priority {
+    background-color: #ffdddd; /* Cor de fundo para tarefas prioritárias */
+    border-color: #ff9999; /* Cor da borda para tarefas prioritárias */
+}
+
+.priority-btn {
+    background-color: #ffc107; /* Cor do botão de prioridade */
+    color: #000;
+}
+
+.priority-btn:hover {
+    background-color: #e0a800; /* Cor do botão de prioridade em hover */
+}
+
+li.completed {
+    text-decoration: line-through;
+    background-color: #d3d3d3;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Adicionar uma sombra */
+    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+}
+
+li.completed:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombras mais intensas ao passar o mouse */
+}
+
+li.completed::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Cor do traço */
+    bottom: 0;
+    left: 0;
+}
+
+li button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+li button:hover {
+    background-color: #b3283d;
+}
+
+li.priority-leve {
+    background-color: #baffa1; /* Cor de fundo para tarefas prioritárias leves (verde) */
+    border-color: #4CAF50; /* Cor da borda para tarefas prioritárias leves (verde) */
+}
+
+li.priority-moderado {
+    background-color: #ffe89b; /* Cor de fundo para tarefas prioritárias moderadas (amarelo) */
+    border-color: #FFC107; /* Cor da borda para tarefas prioritárias moderadas (amarelo) */
+}
+
+li.priority-urgente {
+    background-color: #ff9aa2; /* Cor de fundo para tarefas prioritárias urgentes (vermelho) */
+    border-color: #DC3545; /* Cor da borda para tarefas prioritárias urgentes (vermelho) */
+}
+
+/* Estilo para o botão de prioridade leve */
+.leve-btn {
+    background-color: #5cb85c; /* Verde */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para o botão de prioridade moderada */
+.moderado-btn {
+    background-color: #f0ad4e; /* Amarelo */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo para o botão de prioridade urgente */
+.urgente-btn {
+    background-color: #d9534f; /* Vermelho */
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo adicional para a caixa de seleção de prioridade */
+#priority {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px; /* Adicione margem na parte inferior */
+}
+
+#priority:hover {
+    border-color: #007BFF; /* Cor da borda ao passar o mouse */
+}
+
+#priority:focus {
+    outline: none; /* Remover a borda de foco padrão */
+    border-color: #007BFF; /* Cor da borda ao focar */
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+/* Estilo adicional para tornar o botão "Adicionar Tarefa" mais evidente */
+button[type="submit"] {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Espaçamento de cima */
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Destaque ao passar o mouse */
+}
+
+button[type="submit"]:focus {
+    outline: none; /* Remover a borda de foco padrão */
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
